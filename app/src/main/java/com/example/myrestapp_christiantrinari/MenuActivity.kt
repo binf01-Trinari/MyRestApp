@@ -18,10 +18,20 @@ class MenuActivity : AppCompatActivity() {
         netflix.setOnClickListener {
             netflixIntent()
         }
+
+        val cerca = findViewById<ImageButton>(R.id.cerca)
+        cerca.setOnClickListener {
+            cercaIntent()
+        }
     }
 
     private fun netflixIntent(){
         val mioIntent = Intent(this, WebViewActivity::class.java)
+        startActivity(mioIntent)
+    }
+
+    private fun cercaIntent(){
+        val mioIntent = Intent(this, SearchActivity::class.java)
         startActivity(mioIntent)
     }
 }
